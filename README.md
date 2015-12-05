@@ -1,1 +1,1 @@
-# Repository fo my Java 8 practice
+# Repository for my Java 8 practice
