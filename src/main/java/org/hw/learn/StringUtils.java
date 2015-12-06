@@ -2,6 +2,7 @@ package org.hw.learn;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 public class StringUtils {
@@ -26,5 +27,21 @@ public class StringUtils {
 			}
 		}
 		return filteredList;
+	}
+	
+	public static List<String> transform(List<String> input, Function<String, String> function) {
+		List<String> transformedList = new ArrayList<>(input.size());
+		for(String str : input) {
+			transformedList.add(function.apply(str));
+		}
+		return transformedList;
+	}
+	
+	public static <T, R> List<R> transform1(List<T> input, Function<T, R> funcation) {
+		List<R> transformedList = new ArrayList<>(input.size());
+		for (T t : input) {
+			transformedList.add(funcation.apply(t));
+		}
+		return transformedList;
 	}
 }
