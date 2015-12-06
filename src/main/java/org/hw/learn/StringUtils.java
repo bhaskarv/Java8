@@ -44,4 +44,12 @@ public class StringUtils {
 		}
 		return transformedList;
 	}
+	
+	public static List<String> transform2(List<String> input, MyFunction<String, String> upper) {
+		List<String> transformedList = new ArrayList<>(input.size());
+		for(String str : input) {
+			transformedList.add(upper.apply(str));
+		}
+		return transformedList;
+	}
 }
